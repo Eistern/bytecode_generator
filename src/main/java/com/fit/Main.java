@@ -72,7 +72,7 @@ public class Main {
 
     Label secondCheck = new Label();
 
-    //if (var4 < var2) {sout("Lower");}
+    //if (var4 < var2) {sout("Greater");}
     methodVisitor.visitVarInsn(Opcodes.ILOAD, 4);
     methodVisitor.visitVarInsn(Opcodes.ILOAD, 2);
     methodVisitor.visitJumpInsn(Opcodes.IF_ICMPGE, secondCheck);
@@ -80,7 +80,7 @@ public class Main {
     methodVisitor.visitLdcInsn("Greater");
     methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
 
-    //if (var4 > var2) {sout("Greater");}
+    //if (var4 > var2) {sout("Lower");}
     methodVisitor.visitLabel(secondCheck);
     methodVisitor.visitVarInsn(Opcodes.ILOAD, 4);
     methodVisitor.visitVarInsn(Opcodes.ILOAD, 2);
